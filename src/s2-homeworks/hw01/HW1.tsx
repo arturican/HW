@@ -14,13 +14,23 @@ import avatar from './avatar.png'
 * */
 
 // нужно создать правильный тип вместо any
-export type MessageType = any
+export type MessageType = {
+    id: number,
+    user: {
+        avatar: string,
+        name: string
+    },
+    message: {
+        text: string,
+        time: string
+    }
+}
 
 // структуру объекта не менять
 export const message0: MessageType = {
     id: 0,
     user: {
-        avatar: avatar, // можно менять
+        avatar: 'https://devlato.com/images/octopus-optimized.svg', // можно менять
         name: 'Some Name',  // можно менять
     },
     message: {
@@ -31,7 +41,7 @@ export const message0: MessageType = {
 export const friendMessage0: MessageType = {
     id: 100,
     user: {
-        avatar: avatar, // можно менять
+        avatar: 'https://avatars.githubusercontent.com/u/32475972?v=4', // можно менять
         name: 'Friend Name', // можно менять
     },
     message: {
@@ -41,6 +51,8 @@ export const friendMessage0: MessageType = {
 }
 
 const HW1 = () => {
+    // @ts-ignore
+    // @ts-ignore
     return (
         <div id={'hw1'}>
             <div className={s2.hwTitle}>Homework #1</div>
