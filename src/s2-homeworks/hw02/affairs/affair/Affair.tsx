@@ -1,5 +1,5 @@
 import React from 'react'
-import { AffairType } from '../../HW2'
+import {AffairType, deleteAffair} from '../../HW2'
 import s from './Affair.module.css'
 import s2 from '../Affairs.module.css'
 
@@ -24,9 +24,7 @@ function Affair(props: AffairPropsType) {
             className={affairClass}
         >
             <div id={'hw2-name-' + props.affair._id} className={nameClass}>
-                {/*создаёт студент*/}
-
-                {/**/}
+                {props.affair.name}
             </div>
             <div id={'hw2-priority-' + props.affair._id} hidden>
                 {/*создаёт студент*/}
@@ -37,7 +35,7 @@ function Affair(props: AffairPropsType) {
             <button
                 id={'hw2-button-delete-' + props.affair._id}
                 className={buttonClass}
-                // need to fix
+                onClick={()=>{deleteAffair}}
 
             >
                 {/*текст кнопки могут изменить студенты*/}
