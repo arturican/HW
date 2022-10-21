@@ -14,7 +14,8 @@ type AffairsPropsType = {
 }
 
 function Affairs(props: AffairsPropsType) {
-    const setAll = () => { return props.setFilter("high") }
+    const setAll = () => {
+        return props.setFilter("all") }
 
     const setHigh = () => {
         return props.setFilter("high")
