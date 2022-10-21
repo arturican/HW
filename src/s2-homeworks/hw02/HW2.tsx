@@ -17,6 +17,7 @@ import s2 from '../../s1-main/App.module.css'
 * */
 
 // types
+
 export type AffairPriorityType = 'high' | 'low' | 'middle'
 export type AffairType = {
     _id: number
@@ -37,33 +38,42 @@ const defaultAffairs: AffairType[] = [ // need to fix any
 
 // pure helper functions
 export const filterAffairs = (affairs: AffairType[], filter: FilterType): any => { // need to fix any
-    if (filter === "high") {
-        return affairs.filter(a => a.priority === 'high')
-    }
-    if (filter === 'low') {
-        return affairs.filter(a => a.priority === 'low')
-    }
-    if (filter === 'middle') {
-        return affairs.filter(a => a.priority === "middle")
-    }
-    if (filter === 'all') {
-        return affairs
+    if(filter === 'all'){
+        affairs = defaultAffairs
     }
 
+
+    if(filter === 'high'){
+         affairs = defaultAffairs.filter(f => f.priority === 'high')
+     }
+
+    if(filter === 'low'){
+        affairs = defaultAffairs.filter(f => f.priority === 'low')
+    }
+
+    if(filter === 'middle'){
+        affairs = defaultAffairs.filter(f => f.priority === 'middle')
 }
-export const deleteAffair = (affairs: AffairType[], _id: number): any => { // need to fix any
-         return affairs.map(t => t._id !== _id)
 
+export const deleteAffair = (affairs: AffairType[], _id: number): any => { // need to fix any
+
+    affairs = defaultAffairs.filter(a => a._id !== _id)
+    return affairs // need to fix
 }
 
 function HW2() {
-    const [affairs, setAffairs] = useState<AffairType[]>(defaultAffairs)
-    // need to fix any
+    const [affairs, setAffairs] = useState<AffairType[]>(defaultAffairs) // need to fix any
     const [filter, setFilter] = useState<FilterType>('all')
 
     const filteredAffairs = filterAffairs(affairs, filter)
-     const deleteAffairCallback = (_id: number) => { // need to fix any
-           return  setAffairs( affairs.filter(t => t._id !== _id))
+    const deleteAffairCallback = (_id: number) => { // need to fix any
+        // need to fix
+        setAffairs(affairs.filter(a => a._id !== _id))
+
+
+}
+
+
     }
 
     return (
