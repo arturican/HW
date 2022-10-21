@@ -2,6 +2,7 @@ import React from 'react'
 import {AffairType, deleteAffair} from '../../HW2'
 import s from './Affair.module.css'
 import s2 from '../Affairs.module.css'
+import affairs from "../Affairs";
 
 type AffairPropsType = {
     // key не нужно типизировать
@@ -10,9 +11,8 @@ type AffairPropsType = {
 }
 
 function Affair(props: AffairPropsType) {
-    const deleteCallback = () => {
-         return {deleteAffair}
-    }
+    const deleteCallback = () => {props.deleteAffairCallback(props.affair._id)}
+
 
     const nameClass = s.name + ' ' + s2[props.affair.priority]
     const buttonClass = s.closeButton + ' ' + s2[props.affair.priority]
@@ -34,9 +34,6 @@ function Affair(props: AffairPropsType) {
                 id={'hw2-button-delete-' + props.affair._id}
                 className={buttonClass}
                 onClick={deleteCallback}
-
-
-
             >
                 {/*текст кнопки могут изменить студенты*/}
                 X
