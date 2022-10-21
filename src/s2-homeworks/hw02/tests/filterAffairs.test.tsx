@@ -10,6 +10,7 @@ beforeEach(() => {
         { _id: 3, name: 'games', priority: 'low' },
         { _id: 4, name: 'work', priority: 'high' },
         { _id: 5, name: 'html & css', priority: 'middle' },
+
     ]
 })
 

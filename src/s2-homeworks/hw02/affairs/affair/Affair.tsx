@@ -1,5 +1,5 @@
 import React from 'react'
-import { AffairType } from '../../HW2'
+import {AffairType, deleteAffair} from '../../HW2'
 import s from './Affair.module.css'
 import s2 from '../Affairs.module.css'
 
@@ -33,7 +33,9 @@ function Affair(props: AffairPropsType) {
             <button
                 id={'hw2-button-delete-' + props.affair._id}
                 className={buttonClass}
+
                 onClick={deleteCallback}
+
 
 
             >
