@@ -5,6 +5,7 @@ import s from './Affairs.module.css'
 
 
 
+
 type AffairsPropsType = {
     data: AffairType[] // need to fix any
     setFilter: (filter: FilterType) => void
@@ -13,19 +14,16 @@ type AffairsPropsType = {
 }
 
 function Affairs(props: AffairsPropsType) {
-    const setAll = () => {
-        return props.setFilter("all")
-    }
+    const setAll = () => { return props.setFilter("high") }
 
     const setHigh = () => {
-
-        return props.setFilter("all")
+        return props.setFilter("high")
     }
     const setMiddle = () => {
-        return props.setFilter("all")
+        return props.setFilter("middle")
     }
     const setLow = () => {
-        return props.setFilter("all")
+        return props.setFilter("low")
     }
 
     const cnAll = s.button + ' ' + s.all + (props.filter === 'all' ? ' ' + s.active : '')
