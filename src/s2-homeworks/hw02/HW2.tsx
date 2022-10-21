@@ -17,10 +17,11 @@ import s2 from '../../s1-main/App.module.css'
 * */
 
 // types
-export type AffairPriorityType = 'low' | 'middle' | 'high' // need to fix any
+
+export type AffairPriorityType = 'high' | 'low' | 'middle'
 export type AffairType = {
-    _id: number // need to fix any
-    name: any // need to fix any
+    _id: number
+    name: string
     priority: AffairPriorityType
 }
 export type FilterType = 'all' | AffairPriorityType
@@ -32,6 +33,7 @@ const defaultAffairs: AffairType[] = [ // need to fix any
     {_id: 3, name: 'games', priority: 'low'},
     {_id: 4, name: 'work', priority: 'high'},
     {_id: 5, name: 'html & css', priority: 'middle'},
+
 ]
 
 // pure helper functions
@@ -51,11 +53,10 @@ export const filterAffairs = (affairs: AffairType[], filter: FilterType): any =>
 
     if(filter === 'middle'){
         affairs = defaultAffairs.filter(f => f.priority === 'middle')
-    }
-
-    return affairs // need to fix
 }
+
 export const deleteAffair = (affairs: AffairType[], _id: number): any => { // need to fix any
+
     affairs = defaultAffairs.filter(a => a._id !== _id)
     return affairs // need to fix
 }
@@ -68,6 +69,11 @@ function HW2() {
     const deleteAffairCallback = (_id: number) => { // need to fix any
         // need to fix
         setAffairs(affairs.filter(a => a._id !== _id))
+
+
+}
+
+
     }
 
     return (
