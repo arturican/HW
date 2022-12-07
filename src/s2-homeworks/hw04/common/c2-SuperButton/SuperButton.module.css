@@ -1,36 +1,46 @@
 .button {
+
 }
 
 .disabled {
+    opacity: 0.5;
 }
 
 .secondary {
+    background-color: green;
 }
 
 .default {
 }
 
 .red {
+    background-color: red;
 }
 
 .default:hover {
 }
 
 .red:hover {
+    background-color: red;
 }
 
 .secondary:hover {
+    background-color: green;
 }
 
 
 .default:active {
+    background-color: red;
 }
 
 .secondary:active {
+    background-color: green;
 }
 
 .red:active {
+    background-color: red;
 }
 
 .button:disabled {
+    opacity: 0.5;
 }
