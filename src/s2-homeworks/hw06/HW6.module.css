@@ -1,5 +1,11 @@
 .buttonsContainer {
+    padding: 10px;
+}
+
+.buttonsContainer:hover {
+    background-color: #0080ff;
 }
 
 .editableSpanContainer {
+    padding: 10px;
 }
